@@ -1,24 +1,26 @@
-// routes/userRoutes.js
-const Router = require('express').Router()
-const { getUsers, createUser, getUser, updateUser, deleteUser, login, getLeadsAndManagers } = require('../controllers/usersController');
+const Router = require('express').Router();
+const {
+  getUsers,
+  createUser,
+  getUser,
+  updateUser,
+  deleteUser,
+  getLeadsAndManagers,
+} = require('../controllers/usersController');
 
 Router
   .route('/')
   .get(getUsers)
-  .post(createUser)
-
-Router
-  .route('/login')
-  .post(login)
+  .post(createUser);
 
 Router
   .route('/leadsAndManagers')
-  .get(getLeadsAndManagers)
+  .get(getLeadsAndManagers);
 
 Router
   .route('/:id')
   .get(getUser)
   .put(updateUser)
-  .delete(deleteUser)
+  .delete(deleteUser);
 
-module.exports = Router
+module.exports = Router;

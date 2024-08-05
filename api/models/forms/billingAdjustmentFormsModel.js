@@ -60,13 +60,13 @@ const adjustmentFormsSchema = new mongoose.Schema({
   responses: {
     type: mongoose.Schema.Types.Mixed,
     required: true,
-    validate: {
-      validator: function (responses) {
-        const requiredFields = adjustmentFormsSchema.statics.getRequiredFields(this.formType);
-        return requiredFields.every(field => responses.hasOwnProperty(field) && responses[field] != null);
-      },
-      message: props => `Missing required fields in responses for ${props.value.formType}`
-    }
+    // validate: {
+    //   validator: function (responses) {
+    //     const requiredFields = adjustmentFormsSchema.statics.getRequiredFields(this.formType);
+    //     return requiredFields.every(field => responses.hasOwnProperty(field) && responses[field] != null);
+    //   },
+    //   message: props => `Missing required fields in responses for ${props.value.formType}`
+    // }
   }
 }, { strict: false });
 

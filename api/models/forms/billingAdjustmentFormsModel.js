@@ -1,46 +1,46 @@
 const mongoose = require('mongoose');
 
 // Define required fields for each form type
-const requiredFieldsByType = {
-  SolutionsBillingAdjustment: [
-    // 'didOriginalHoursEnteredInRepliconGenerateInvoice',
-    // 'serviceLine',
-    // 'customerId',
-    // 'customerName',
-    // 'typeOfAdjustment',
-    // 'isAdditionalIncidentalRequestRequired',
-    // 'isRoaRequired',
-    // 'typeOfCorrection',
-    // 'whyCorrectionIsNeeded',
-    // 'adjustmentReasonDetails',
-    // 'submittedOnBehalfOf',
-    // 'invoicesToBeAdjusted',
-    // 'resourceNameAndWeekEndingDatesAdjustmentIsFor',
-    // 'approversFullName',
-    // 'approversTitle',
-    // 'approversEmailAddress',
-    // 'netDollarAmountofAdjustmentRequested',
-    // 'approvalLevel'
-  ],
-  HRS: [
-    // Define required fields for HRS form here
-    'hrsSpecificField1',
-    'hrsSpecificField2',
-    // ... other HRS-specific fields ...
-  ],
-  MSP: [
-    // Define required fields for MSP form here
-    'mspSpecificField1',
-    'mspSpecificField2',
-    // ... other MSP-specific fields ...
-  ],
-  CEL: [
-    // Define required fields for CEL form here
-    'celSpecificField1',
-    'celSpecificField2',
-    // ... other CEL-specific fields ...
-  ]
-};
+// const requiredFieldsByType = {
+//   SolutionsBillingAdjustment: [
+//     // 'didOriginalHoursEnteredInRepliconGenerateInvoice',
+//     // 'serviceLine',
+//     // 'customerId',
+//     // 'customerName',
+//     // 'typeOfAdjustment',
+//     // 'isAdditionalIncidentalRequestRequired',
+//     // 'isRoaRequired',
+//     // 'typeOfCorrection',
+//     // 'whyCorrectionIsNeeded',
+//     // 'adjustmentReasonDetails',
+//     // 'submittedOnBehalfOf',
+//     // 'invoicesToBeAdjusted',
+//     // 'resourceNameAndWeekEndingDatesAdjustmentIsFor',
+//     // 'approversFullName',
+//     // 'approversTitle',
+//     // 'approversEmailAddress',
+//     // 'netDollarAmountofAdjustmentRequested',
+//     // 'approvalLevel'
+//   ],
+//   HRS: [
+//     // Define required fields for HRS form here
+//     // 'hrsSpecificField1',
+//     // 'hrsSpecificField2',
+//     // ... other HRS-specific fields ...
+//   ],
+//   MSP: [
+//     // Define required fields for MSP form here
+//     // 'mspSpecificField1',
+//     // 'mspSpecificField2',
+//     // ... other MSP-specific fields ...
+//   ],
+//   CEL: [
+//     // Define required fields for CEL form here
+//     // 'celSpecificField1',
+//     // 'celSpecificField2',
+//     // ... other CEL-specific fields ...
+//   ]
+// };
 
 const adjustmentFormsSchema = new mongoose.Schema({
   formType: {
@@ -71,9 +71,9 @@ const adjustmentFormsSchema = new mongoose.Schema({
 }, { strict: false });
 
 // Custom method to get required fields based on form type
-adjustmentFormsSchema.statics.getRequiredFields = function (formType) {
-  return requiredFieldsByType[formType] || [];
-};
+// adjustmentFormsSchema.statics.getRequiredFields = function (formType) {
+//   return requiredFieldsByType[formType] || [];
+// };
 
 const AdjustmentFormsModel = mongoose.model('form - billing adjustment', adjustmentFormsSchema, 'form - billing adjustments');
 

@@ -30,7 +30,7 @@ const billingAdjustmentsFormsRoute = require('./api/routes/forms/billingAdjustme
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.FRONTEND_URL,
+  origin: process.env.NODE_ENV === 'development' ? '*' : process.env.FRONTEND_URL,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
